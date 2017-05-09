@@ -1,0 +1,43 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.jsoft.robot</groupId>
+  <artifactId>SmartQQUse</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>SmartQQUse</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  
+  <repositories>
+  	<!-- SmartQQ SDK repository https://github.com/ScienJus/smartqq -->
+  	<repository>
+	    <id>scienjus-mvn-repo</id>
+	    <url>https://raw.github.com/ScienJus/maven/snapshot/</url>
+	    <snapshots>
+	        <enabled>true</enabled>
+	        <updatePolicy>always</updatePolicy>
+	    </snapshots>
+	</repository>
+  </repositories>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    <!-- SmartQQ SDK https://github.com/ScienJus/smartqq -->
+    <dependency>
+	    <groupId>com.scienjus</groupId>
+	    <artifactId>smartqq</artifactId>
+	    <version>1.0-SNAPSHOT</version>
+	</dependency>
+  </dependencies>
+</project>
