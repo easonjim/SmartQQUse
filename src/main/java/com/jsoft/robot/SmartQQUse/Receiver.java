@@ -129,6 +129,18 @@ public class Receiver {
                 
             } catch (Exception e) {
                 e.printStackTrace();
+                for (Group group : groupList) {
+					if (group.getName()=="智能回复测试") {
+		                client.sendMessageToGroup(group.getId(), "程序挂了:【"+e.getMessage()+"-"+e.getStackTrace()+"】");
+					}
+				}
+                for (Friend friend : friendList) {
+					if (friend.getNickname()=="Jim") {
+		                client.sendMessageToFriend(friend.getUserId(), "程序挂了:【"+e.getMessage()+"-"+e.getStackTrace()+"】");
+					}
+				}
+                //退出整个程序
+                System.exit(0);
             }
         }
 
