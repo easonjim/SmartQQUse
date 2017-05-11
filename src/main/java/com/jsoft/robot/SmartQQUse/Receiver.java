@@ -66,7 +66,7 @@ public class Receiver {
 								client.sendMessageToGroup(group.getId(), "@"+groupUserNick+" 找我干嘛了？");
 							}
 							//如果为QQ小冰
-							if (groupUserNick.contains("QQ小冰")) {
+							if (groupUserNick.contains("QQ小冰")||groupUserNick.contains("2854196306")) {
 								//判断是否为欢迎新人
 								String regEx = "欢迎(.*)，大家出来迎接新人啦！";
 							    Pattern pattern = Pattern.compile(regEx);
@@ -86,7 +86,7 @@ public class Receiver {
 								client.sendMessageToGroup(group.getId(), "@"+groupUserNick+" 亲，我是此群的智能助手，群共享和群公告有一些jenkins的入门资料，可以参考一下哟。我是采用SmartQQ协议开发的，有兴趣可以参考：https://github.com/ScienJus/smartqq");
 							}
 							//如果为QQ小冰
-							if (groupUserNick.contains("QQ小冰")) {
+							if (groupUserNick.contains("QQ小冰")||groupUserNick.contains("2854196306")) {
 								//判断是否为欢迎新人
 								String regEx = "欢迎(.*)，大家出来迎接新人啦！";
 							    Pattern pattern = Pattern.compile(regEx);
@@ -106,7 +106,7 @@ public class Receiver {
 								client.sendMessageToGroup(group.getId(), "@"+groupUserNick+" 亲，我是此群的智能助手，群共享和群公告有一些Maven的入门资料，可以参考一下哟。我是采用SmartQQ协议开发的，有兴趣可以参考：https://github.com/ScienJus/smartqq");
 							}
 							//如果为QQ小冰
-							if (groupUserNick.contains("QQ小冰")) {
+							if (groupUserNick.contains("QQ小冰")||groupUserNick.contains("2854196306")) {
 								//判断是否为欢迎新人
 								String regEx = "欢迎(.*)，大家出来迎接新人啦！";
 							    Pattern pattern = Pattern.compile(regEx);
@@ -128,7 +128,19 @@ public class Receiver {
                 
                 
             } catch (Exception e) {
+                for (Group group : groupList) {
+					if (group.getName()=="智能回复测试") {
+		                client.sendMessageToGroup(group.getId(), "程序挂了:【"+e.getMessage()+"-"+e.getStackTrace()+"】");
+					}
+				}
+                for (Friend friend : friendList) {
+					if (friend.getNickname()=="Jim") {
+		                client.sendMessageToFriend(friend.getUserId(), "程序挂了:【"+e.getMessage()+"-"+e.getStackTrace()+"】");
+					}
+				}
                 e.printStackTrace();
+                //退出整个程序
+                System.exit(0);
             }
         }
 
