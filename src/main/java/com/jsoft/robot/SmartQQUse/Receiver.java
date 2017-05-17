@@ -71,7 +71,7 @@ public class Receiver {
 								String regEx = "欢迎(.*)，";
 							    Pattern pattern = Pattern.compile(regEx);
 							    Matcher matcher = pattern.matcher(content);
-							    if(matcher.matches()){//如果为新人就提示欢迎新人
+							    if(matcher.find()){//如果为新人就提示欢迎新人
 							    	String newPeopleNick = matcher.group(1);//提取新人QQ昵称
 							    	newPeopleNick = newPeopleNick.replace("加入", "");
 							    	client.sendMessageToGroup(group.getId(), "@"+newPeopleNick+" 你好，我是此群的智能助手，有什么事可以找我哟！");
@@ -92,7 +92,7 @@ public class Receiver {
 								String regEx = "欢迎(.*)，";
 							    Pattern pattern = Pattern.compile(regEx);
 							    Matcher matcher = pattern.matcher(content);
-							    if(matcher.matches()){//如果为新人就提示欢迎新人
+							    if(matcher.find()){//如果为新人就提示欢迎新人
 							    	String newPeopleNick = matcher.group(1);//提取新人QQ昵称
 							    	newPeopleNick = newPeopleNick.replace("加入", "");
 							    	client.sendMessageToGroup(group.getId(), "@"+newPeopleNick+" 新来的朋友，你好，我是此群的智能助手，群共享和群公告有一些jenkins的入门资料，可以参考一下。我是采用SmartQQ协议开发的，有兴趣可以参考：https://github.com/ScienJus/smartqq");
@@ -113,7 +113,7 @@ public class Receiver {
 								String regEx = "欢迎(.*)，";
 							    Pattern pattern = Pattern.compile(regEx);
 							    Matcher matcher = pattern.matcher(content);
-							    if(matcher.matches()){//如果为新人就提示欢迎新人
+							    if(matcher.find()){//如果为新人就提示欢迎新人
 							    	String newPeopleNick = matcher.group(1);//提取新人QQ昵称
 							    	newPeopleNick = newPeopleNick.replace("加入", "");
 							    	client.sendMessageToGroup(group.getId(), "@"+newPeopleNick+" 新来的朋友，你好，我是此群的智能助手，群共享和群公告有一些Maven的入门资料，可以参考一下。我是采用SmartQQ协议开发的，有兴趣可以参考：https://github.com/ScienJus/smartqq");
